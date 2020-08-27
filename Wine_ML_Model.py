@@ -1,8 +1,7 @@
-import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as npp
+import pandas as pd
 from sklearn.model_selection import train_test_split
-
 
 #read in the data
 white = pd.read_csv("http://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/winequality-white.csv", sep=';')
