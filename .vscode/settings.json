@@ -1,6 +1,7 @@
 {
-    "python.pythonPath": "Keras.venv\\Scripts\\python.exe",
+    "python.pythonPath": "C:\\Users\\asuth\\AppData\\Local\\Microsoft\\WindowsApps\\python.exe",
     "python.linting.pylintEnabled": true,
     "python.linting.banditEnabled": true,
-    "python.linting.enabled": true
+    "python.linting.enabled": true,
+    "python.envFile": "${workspaceFolder}/.env"
 }
