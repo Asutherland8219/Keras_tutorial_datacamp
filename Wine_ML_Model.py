@@ -3,8 +3,9 @@ import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import confusion_matrix, precision_score, recall_score, f1_score, cohen_kappa_score
 from keras.models import Sequential
-from keras.models import Dense
+from keras.layers.core import Dense
 
 #read in the data
 white = pd.read_csv("http://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/winequality-white.csv", sep=';')
@@ -83,3 +84,24 @@ y_pred = model.predict(X_test)
 score = model.evaluate(X_test, y_test, verbose=1)
 
 print(score)
+## This score is 0.99 or 99%... realistically this is much much higher than you would get from a typical model and in fact may be overfit to the data ##
+
+# Confusion Matrix
+## A matrix which shows the correct predictions as well as the incorrect predictions made . in a ideal situation numbers will only be displayed in the diagonal (left to right ) ##
+confusion_matrix(y_test, y_pred)
+
+# Precision score
+## Precision score is the numeric representative for exactness in the model. Higher is better.
+precision_score(y_test, y_pred)
+
+# Recall 
+## Recall is a measure of the classifiers completeness. Higher means more cases the classifier covers.
+recall_score(y_test, y_pred)
+
+# F1 Score 
+## The weighted average of precision and recall 
+f1_score(y_test, y_pred)
+
+# Cohen's kappa
+## Classification accuracy normalized by the class imbalances in the data 
+cohen_ kappy_score(y_test, y_pred)
